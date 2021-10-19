@@ -4,14 +4,19 @@
   <script src="https://unpkg.com/react-dom@16.12.0/umd/react-dom.development.js"></script>
   <script src="https://unpkg.com/@babel/standalone@7.8.3/babel.js"></script>
   <script type="text/babel">
-    const Message = props => <div className="message">{props.msg}</div>
-    const element = (
-      <div className="container">
-        <Message msg="Hello World" />
-        <Message msg="Goodbye World" />
+   
+      const Message = props => <div className="message">{props.msg}</div>
+      const Message2 = props => <div className="message2">{props.msg2}</div>
+      const element = (
+        <div className="container">
+          <Message msg="Hey Everyone!" />
+          <Message msg= 'All right, goodbye' />
+          <Message msg='We wll see you tomorrow' />
+          <Message2 msg2="This is the second message" />
         </div>
-    )
+      )
 
-    ReactDOM.render(element, document.getElementById('root'))
+
+        ReactDOM.render(element, document.getElementById('root'))
   </script>
 </body>
