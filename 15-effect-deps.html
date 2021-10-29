@@ -45,6 +45,11 @@
       React.useEffect(() => {
         window.localStorage.setItem('name', name)
       }, [name])
+      // Basically here, we are using the useEffect for the name and not the button counter. When the page
+      // is initially rendered, the useEffect gets triggered. Once you add the useEffect dependency [name], 
+      // it makes sure that the useEffect is only being triggered when there's a change with the name, not
+      // the count button. 
+     
       // the 'name' in the array tells React that you only want to synchronize the state of 
       // the world with the state of our application. In the const[name,setName] above,
       // it's synchronous because we used an arrow function, so the dependency array, [name], makes sure that 
