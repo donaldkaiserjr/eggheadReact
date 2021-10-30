@@ -3,7 +3,39 @@
   <script src="https://unpkg.com/react@16.12.0/umd/react.development.js"></script>
   <script src="https://unpkg.com/react-dom@16.12.0/umd/react-dom.development.js"></script>
   <script src="https://unpkg.com/@babel/standalone@7.8.3/babel.js"></script>
+  <style>
+    .container {
+      display: flex;
+      flex-direction: row;
+    }
+    .input {
+      margin-bottom: 20px;
+      margin-left: 10px;
+    }
+    .btn {
+    font-size: 16px;
+    letter-spacing: 2px;
+    font-weight: 400 !important;
+    background-color: #e63946ff;
+    color: #fff;
+    padding: 23px 50px;
+    margin-left: 80px;
+    text-align: center;
+    display: inline-block !important;
+    text-decoration: none;
+    border: 0px;
+    width: max-content;
+    cursor: pointer;
+    transition: all 0.3s 0s ease-in-out;
+    }
+    .btn:hover {
+    transform: scale(1.06, 1);
+    background-color: rgb(216, 10, 27);
+    text-decoration: none;
+}
+    </style>
   <script type="text/babel">
+  
     function UsernameForm() {
       const [username, setUsername] = React.useState('')
 
@@ -12,26 +44,26 @@
         alert(`You entered: ${username}`)
       }
 
-      function handleChange(event) {
+      function handleChange(event){
         setUsername(event.target.value.toLowerCase())
       }
-
       return (
         <form onSubmit={handleSubmit}>
-          <div>
-            <label htmlFor="usernameInput">Username:</label>
-            <input
+          <div className='container'>
+            <label htmlFor="usernameInput">Username: </label>
+            <input 
               id="usernameInput"
               type="text"
               onChange={handleChange}
               value={username}
-            />
-          </div>
-          <button type="submit">Submit</button>
+              className='input'
+              />
+            </div>
+            <button className="btn" type='submit'>Submit</button>
         </form>
       )
     }
-
     ReactDOM.render(<UsernameForm />, document.getElementById('root'))
   </script>
 </body>
+
