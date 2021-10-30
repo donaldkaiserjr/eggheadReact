@@ -6,16 +6,22 @@
   <script type="text/babel">
     function UsernameForm() {
       function handleSubmit(event) {
-        event.preventDefault()
+        event.preventDefault() // this stops a full-page refresh
         const username = event.target.elements.usernameInput.value
         alert(`You entered: ${username}`)
       }
 
+
+        // Below, onSubmit is better than onClick because it allows the 
+        // form to go through no matter how the user sends it through. 
+        // For example, the user may press
+        // the return key instead of the submit button. Either one should send it through.
       return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit}>  
+        
           <div>
             <label htmlFor="usernameInput">Username:</label>
-            <input id="usernameInput" type="text" />
+            <input id="usernameInput" placeholder="Enter Username" type="text" />
           </div>
           <button type="submit">Submit</button>
         </form>
