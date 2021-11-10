@@ -10,8 +10,7 @@
         const username = event.target.elements.usernameInput.value
         alert(`You entered: ${username}`)
       }
-
-
+      
         // Below, onSubmit is better than onClick because it allows the 
         // form to go through no matter how the user sends it through. 
         // For example, the user may press
@@ -27,7 +26,6 @@
         </form>
       )
     }
-
     ReactDOM.render(<UsernameForm />, document.getElementById('root'))
   </script>
 </body>
