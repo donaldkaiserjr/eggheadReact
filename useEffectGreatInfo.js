@@ -16,7 +16,7 @@ useEffect(() => {
 // Condition based with "clean up"
 useEffect(() => {
 	console.log("I run every time my condition is changed")
-	
+
 	return () => {
     	console.log("Use this return as a 'clean up tool' (this runs before the actual code)")
     }
